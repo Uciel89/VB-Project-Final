@@ -1,0 +1,15 @@
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\bin\Debug\sys_uciel.exe.config
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\bin\Debug\sys_uciel.exe
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\bin\Debug\sys_uciel.pdb
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\bin\Debug\sys_uciel.xml
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.vbprojAssemblyReference.cache
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.frmLogin.resources
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.Resources.resources
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.vbproj.GenerateResource.cache
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.vbproj.CoreCompileInputs.cache
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.exe
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.xml
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.pdb
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.frmPromedio.resources
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.frmConversor.resources
+F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\obj\Debug\sys_uciel.frmMain.resources
