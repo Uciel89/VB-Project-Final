@@ -24,6 +24,8 @@ Partial Class frmPromedio
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.txtMayores = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtCant = New System.Windows.Forms.TextBox()
@@ -38,13 +40,11 @@ Partial Class frmPromedio
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,6 +69,28 @@ Partial Class frmPromedio
         Me.Label1.Size = New System.Drawing.Size(72, 17)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Promedio "
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Image = Global.sys_uciel.My.Resources.Resources.minimize_icon
+        Me.PictureBox1.Location = New System.Drawing.Point(589, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'btnClose
+        '
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.Image = Global.sys_uciel.My.Resources.Resources.close_icon
+        Me.btnClose.Location = New System.Drawing.Point(615, 13)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(18, 18)
+        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnClose.TabIndex = 0
+        Me.btnClose.TabStop = False
         '
         'txtMayores
         '
@@ -208,28 +230,6 @@ Partial Class frmPromedio
         Me.PictureBox2.TabIndex = 29
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.sys_uciel.My.Resources.Resources.minimize_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(589, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'btnClose
-        '
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.Image = Global.sys_uciel.My.Resources.Resources.close_icon
-        Me.btnClose.Location = New System.Drawing.Point(615, 13)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(18, 18)
-        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnClose.TabIndex = 0
-        Me.btnClose.TabStop = False
-        '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.sys_uciel.My.Resources.Resources.dni_icon
@@ -268,9 +268,9 @@ Partial Class frmPromedio
         Me.Text = "frmPromedio"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

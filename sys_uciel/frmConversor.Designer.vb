@@ -24,6 +24,8 @@ Partial Class frmConversor
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnMinimize = New System.Windows.Forms.PictureBox()
+        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.txtBoxImpor = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCalcular = New System.Windows.Forms.Button()
@@ -37,14 +39,12 @@ Partial Class frmConversor
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.btnMinimize = New System.Windows.Forms.PictureBox()
-        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -70,12 +70,35 @@ Partial Class frmConversor
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Conversor "
         '
+        'btnMinimize
+        '
+        Me.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMinimize.Image = Global.sys_uciel.My.Resources.Resources.minimize_icon
+        Me.btnMinimize.Location = New System.Drawing.Point(407, 12)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(18, 18)
+        Me.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnMinimize.TabIndex = 1
+        Me.btnMinimize.TabStop = False
+        '
+        'btnClose
+        '
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.Image = Global.sys_uciel.My.Resources.Resources.close_icon
+        Me.btnClose.Location = New System.Drawing.Point(433, 12)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(18, 18)
+        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnClose.TabIndex = 0
+        Me.btnClose.TabStop = False
+        '
         'txtBoxImpor
         '
         Me.txtBoxImpor.Location = New System.Drawing.Point(244, 113)
         Me.txtBoxImpor.Name = "txtBoxImpor"
         Me.txtBoxImpor.Size = New System.Drawing.Size(92, 20)
         Me.txtBoxImpor.TabIndex = 0
+        Me.txtBoxImpor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label2
         '
@@ -103,6 +126,7 @@ Partial Class frmConversor
         Me.txtBoxCot.Name = "txtBoxCot"
         Me.txtBoxCot.Size = New System.Drawing.Size(92, 20)
         Me.txtBoxCot.TabIndex = 1
+        Me.txtBoxCot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
@@ -140,6 +164,7 @@ Partial Class frmConversor
         Me.txtBoxDni.Name = "txtBoxDni"
         Me.txtBoxDni.Size = New System.Drawing.Size(92, 20)
         Me.txtBoxDni.TabIndex = 26
+        Me.txtBoxDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label5
         '
@@ -190,28 +215,6 @@ Partial Class frmConversor
         Me.btnRefresh.TabIndex = 3
         Me.btnRefresh.UseVisualStyleBackColor = False
         '
-        'btnMinimize
-        '
-        Me.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMinimize.Image = Global.sys_uciel.My.Resources.Resources.minimize_icon
-        Me.btnMinimize.Location = New System.Drawing.Point(407, 12)
-        Me.btnMinimize.Name = "btnMinimize"
-        Me.btnMinimize.Size = New System.Drawing.Size(18, 18)
-        Me.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnMinimize.TabIndex = 1
-        Me.btnMinimize.TabStop = False
-        '
-        'btnClose
-        '
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.Image = Global.sys_uciel.My.Resources.Resources.close_icon
-        Me.btnClose.Location = New System.Drawing.Point(433, 12)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(18, 18)
-        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnClose.TabIndex = 0
-        Me.btnClose.TabStop = False
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.sys_uciel.My.Resources.Resources.cotizacion_icon
@@ -249,10 +252,10 @@ Partial Class frmConversor
         Me.Text = "1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

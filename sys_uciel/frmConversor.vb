@@ -67,4 +67,5 @@ Public Class frmConversor
         Me.txtBoxDni.Clear()
         Me.txtBoxDni.Enabled = True
     End Sub
+
 End Class
