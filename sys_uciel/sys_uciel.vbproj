@@ -148,7 +148,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="recursos\documentos\Historial.txt" />
     <None Include="recursos\imagenes\cotizacion_icon.png" />
     <None Include="recursos\imagenes\money_icon.png" />
     <None Include="recursos\imagenes\dni_icon.png" />
@@ -160,6 +159,9 @@
     <None Include="recursos\imagenes\refresh_icon.png" />
     <None Include="recursos\imagenes\close_icon.png" />
     <None Include="recursos\imagenes\minimize_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="recursos\documentos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

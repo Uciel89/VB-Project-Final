@@ -1,3 +1,0 @@
-El DNI es: 44523405
-La cantidad de edades ingresadas son: 4
-El promedio de las edades generado por este DNI: 44523405 son: 73

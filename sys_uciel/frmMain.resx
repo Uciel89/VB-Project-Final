@@ -135,4 +135,7 @@ del mismo. Además, si es que deseamos comprar más
 de 100 dólares, nos guardará en un documento un 
 pequeño historial de compra relativa.</value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>33</value>
+  </metadata>
 </root>

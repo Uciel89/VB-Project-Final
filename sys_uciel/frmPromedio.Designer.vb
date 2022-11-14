@@ -41,6 +41,8 @@ Partial Class frmPromedio
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,8 +159,9 @@ Partial Class frmPromedio
         '
         'btnCalcular
         '
+        Me.btnCalcular.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCalcular.Enabled = False
-        Me.btnCalcular.Location = New System.Drawing.Point(85, 209)
+        Me.btnCalcular.Location = New System.Drawing.Point(85, 238)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(189, 23)
         Me.btnCalcular.TabIndex = 19
@@ -167,6 +170,7 @@ Partial Class frmPromedio
         '
         'btnAgregar
         '
+        Me.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAgregar.Location = New System.Drawing.Point(85, 180)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(189, 23)
@@ -240,12 +244,35 @@ Partial Class frmPromedio
         Me.PictureBox3.TabIndex = 30
         Me.PictureBox3.TabStop = False
         '
+        'btnRefresh
+        '
+        Me.btnRefresh.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRefresh.Image = Global.sys_uciel.My.Resources.Resources.refresh_icon
+        Me.btnRefresh.Location = New System.Drawing.Point(541, 218)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(43, 43)
+        Me.btnRefresh.TabIndex = 31
+        Me.btnRefresh.UseVisualStyleBackColor = False
+        '
+        'btnSave
+        '
+        Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSave.Location = New System.Drawing.Point(85, 209)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(189, 23)
+        Me.btnSave.TabIndex = 32
+        Me.btnSave.Text = "Guardar"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
         'frmPromedio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(646, 324)
+        Me.Controls.Add(Me.btnSave)
+        Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Panel2)
@@ -296,4 +323,6 @@ Partial Class frmPromedio
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents btnRefresh As Button
+    Friend WithEvents btnSave As Button
 End Class

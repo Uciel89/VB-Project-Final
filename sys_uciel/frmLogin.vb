@@ -1,12 +1,9 @@
 ﻿Imports System.Runtime.InteropServices
 
 Public Class frmLogin
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Application.Exit()
-    End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.WindowState = FormWindowState.Minimized
+    Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.txtBoxLogin.Select()
     End Sub
 
     ':: Configuración para darle movimiento a la barra de navegación
@@ -24,8 +21,18 @@ Public Class frmLogin
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If Me.editTextPassword.Text = "123" Then
+    ':: Botones de navegación
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    ':: Botón para acceder al programa
+    Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        If Me.txtBoxLogin.Text = "123" Then
             frmMain.Show()
             Me.Close()
         Else

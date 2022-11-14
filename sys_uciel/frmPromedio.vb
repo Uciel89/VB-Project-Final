@@ -4,25 +4,17 @@ Imports System.Math
 Public Class frmPromedio
 
     ':: Variables de calculo y dni
-    Dim promedio As Integer
-    Dim acumlador_edades As String
-    Dim dni As String
+    Private promedio As Integer
+    Private edades_mayores As Integer
+    Private dni As String
 
     ':: Variables para archivos
-    Dim ruta As String = "F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\recursos\documentos\"
-    Dim archivo As String = "Historial.txt"
-    Dim EditarDocumento As New ReadWriteCreate(ruta, archivo)
+    Private ReadOnly ruta As String = "F:\Proyectos\proyectos\Desarrollador de software\sys_uciel\sys_uciel\recursos\documentos\"
+    Private ReadOnly archivo As String = "Historial.txt"
+    Private ReadOnly EditarDocumento As New ReadWriteCreate(ruta, archivo)
 
     Private Sub FrmPromedio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.txtDni.Select()
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Close()
     End Sub
 
     ':: Configuración para darle movimiento a la barra de navegación
@@ -39,61 +31,125 @@ Public Class frmPromedio
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        If txtDni.Text IsNot "" And txtEdad.Text IsNot "" Then
-            Me.txtCant.Text = Val(Me.txtCant.Text) + 1
-
-            If Val(Me.txtEdad.Text) > 17 Then
-                ':: Inicializamos el acumulador de edades, solo con las edades mayores
-                acumlador_edades = acumlador_edades + Val(Me.txtEdad.Text)
-
-                ':: Aumentamos el valor que contiene el txtMayores, para mostrar que estamos agregando edades mayores
-                Me.txtMayores.Text = Val(Me.txtMayores.Text) + 1
-            End If
-
-            ':: Validamos que el campo DNI no este vacio, y guardamos el valor ingresado y despues bloqueamos su modificación
-            If txtDni.Text IsNot "" Then
-                dni = Me.txtDni.Text
-                Me.txtDni.Enabled = False
-            End If
-
-            MsgBox("Edad guardada con exito", MsgBoxStyle.Information, "Multi App")
-            Me.txtEdad.Clear()
-
-            btnCalcular.Enabled = True
-        Else
-            MsgBox("Por favor ingresar datos en DNI y edad", MsgBoxStyle.Critical, "Multi App")
-        End If
+    ':: Botones de navegación
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub BtnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
-        promedio = acumlador_edades / Val(Me.txtMayores.Text)
-        Me.txtPromedio.Text = Round(promedio, 2).ToString
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Close()
+    End Sub
 
-        ':: Limpiamos el textBox de DNI, para generar otro registro
-        Me.txtDni.Clear()
-        Me.txtDni.Enabled = True
-        Me.txtDni.Select()
+    ':: Botón para agregar y incrementar los difrentes contadores, y que nos da el paso a poder realizar el promedio de edades
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Select Case Val(Me.txtEdad.Text)
+            Case 0
+                MsgBox("No se puede ingresar una edad 0", MsgBoxStyle.Critical, "Multi App")
+
+            Case > 0
+                If txtDni.Text IsNot "" And txtEdad.Text IsNot "" Then
+                    Me.txtCant.Text = Val(Me.txtCant.Text) + 1
+
+                    If Val(Me.txtEdad.Text) > 17 Then
+                        ':: Inicializamos el acumulador de edades, solo con las edades mayores
+                        edades_mayores += Val(Me.txtEdad.Text)
+
+                        ':: Aumentamos el valor que contiene el txtMayores, para mostrar que estamos agregando edades mayores
+                        Me.txtMayores.Text = Val(Me.txtMayores.Text) + 1
+                    End If
+
+                    ':: Validamos que el campo DNI no este vacio, y guardamos el valor ingresado y despues bloqueamos su modificación
+                    If txtDni.Text IsNot "" Then
+                        dni = Me.txtDni.Text
+                        Me.txtDni.Enabled = False
+                    End If
+
+                    MsgBox("Edad guardada con exito", MsgBoxStyle.Information, "Multi App")
+                    Me.txtEdad.Clear()
+
+                    ':: Pequeña validación para activar o desactivar botones
+                    If Me.txtMayores.Text Is "" Then
+                        Me.btnCalcular.Enabled = False
+
+                    Else
+                        Me.btnCalcular.Enabled = True
+                        Me.btnSave.Enabled = False
+                    End If
+                Else
+                    MsgBox("Por favor ingresar datos en DNI y edad", MsgBoxStyle.Critical, "Multi App")
+                End If
+        End Select
+    End Sub
+
+    ':: Con esté botón para hacer tanto el calculo de promedio como el almacenamiento de los datos dentro de un documento de texto
+    Private Sub BtnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
+
+        If Me.txtMayores IsNot "" Then
+            promedio = edades_mayores / Val(Me.txtMayores.Text)
+            Me.txtPromedio.Text = Round(promedio, 2).ToString
+
+            Me.txtEdad.Enabled = False
+        End If
 
         ':: Manejo de archivos
         Try
             EditarDocumento.ReadAndWite("El DNI es: " + dni)
             EditarDocumento.ReadAndWite("La cantidad de edades ingresadas son: " + txtCant.Text)
             EditarDocumento.ReadAndWite("El promedio de las edades generado por este DNI: " + dni + " son: " + promedio.ToString)
+            EditarDocumento.ReadAndWite("")
 
             ':: Mandamos un mensaje con la confimación de que guardamos los datos dentro de Bloc de notas
-            MsgBox("Registro guardado exitosamente", MsgBoxStyle.Information, "Multi App")
+            MsgBox("Datos guardados exitosamente", MsgBoxStyle.Information, "Multi App")
 
-            ':: Limpiamos las cajas de txto
-            txtEdad.Text = ""
-            txtPromedio.Text = ""
-            txtMayores.Text = ""
-            txtCant.Text = ""
-            dni = ""
 
         Catch ex As Exception
             MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
         End Try
     End Sub
 
+    ':: Botón para guardar datos en un documento sin promedio
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        ':: Manejo de archivos
+        Try
+            Me.txtEdad.Enabled = False
+
+            EditarDocumento.ReadAndWite("El DNI es: " + dni)
+            EditarDocumento.ReadAndWite("La cantidad de edades ingresadas son: " + txtCant.Text)
+            EditarDocumento.ReadAndWite("")
+
+            ':: Mandamos un mensaje con la confimación de que guardamos los datos dentro de Bloc de notas
+            MsgBox("Datos guardados exitosamente", MsgBoxStyle.Information, "Multi App")
+
+        Catch ex As Exception
+            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
+        End Try
+    End Sub
+
+    ':: Botón para refrescar la ventana
+    Private Sub BtnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+
+        ':: Limpiamos el textBox de DNI, para generar otro registro
+        Me.txtDni.Clear()
+        Me.txtDni.Enabled = True
+        Me.txtDni.Select()
+
+        ':: Limpiamos el textBox de edad, para generar otro registro
+        Me.txtEdad.Text = ""
+        Me.txtEdad.Enabled = True
+
+        ':: Limpiamos las cajas de txto
+        Me.txtPromedio.Text = ""
+        Me.txtMayores.Text = ""
+        Me.txtCant.Text = ""
+        Me.dni = ""
+
+        ':: Establecemos el acumulador y contador a 0 
+        promedio = 0
+        edades_mayores = 0
+
+        Me.btnSave.Enabled = True
+        Me.btnCalcular.Enabled = False
+
+    End Sub
 End Class

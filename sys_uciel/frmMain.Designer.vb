@@ -25,6 +25,8 @@ Partial Class frmMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnMinimize = New System.Windows.Forms.PictureBox()
+        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PromedioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,14 +39,12 @@ Partial Class frmMain
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnMinimize = New System.Windows.Forms.PictureBox()
-        Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -68,6 +68,28 @@ Partial Class frmMain
         Me.Label1.Size = New System.Drawing.Size(42, 17)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Inicio"
+        '
+        'btnMinimize
+        '
+        Me.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMinimize.Image = Global.sys_uciel.My.Resources.Resources.minimize_icon
+        Me.btnMinimize.Location = New System.Drawing.Point(802, 13)
+        Me.btnMinimize.Name = "btnMinimize"
+        Me.btnMinimize.Size = New System.Drawing.Size(18, 18)
+        Me.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnMinimize.TabIndex = 1
+        Me.btnMinimize.TabStop = False
+        '
+        'btnClose
+        '
+        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClose.Image = Global.sys_uciel.My.Resources.Resources.close_icon
+        Me.btnClose.Location = New System.Drawing.Point(828, 13)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(18, 18)
+        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnClose.TabIndex = 0
+        Me.btnClose.TabStop = False
         '
         'MenuStrip1
         '
@@ -179,28 +201,6 @@ Partial Class frmMain
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
-        'btnMinimize
-        '
-        Me.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMinimize.Image = Global.sys_uciel.My.Resources.Resources.minimize_icon
-        Me.btnMinimize.Location = New System.Drawing.Point(802, 13)
-        Me.btnMinimize.Name = "btnMinimize"
-        Me.btnMinimize.Size = New System.Drawing.Size(18, 18)
-        Me.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnMinimize.TabIndex = 1
-        Me.btnMinimize.TabStop = False
-        '
-        'btnClose
-        '
-        Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnClose.Image = Global.sys_uciel.My.Resources.Resources.close_icon
-        Me.btnClose.Location = New System.Drawing.Point(828, 13)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(18, 18)
-        Me.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnClose.TabIndex = 0
-        Me.btnClose.TabStop = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -224,12 +224,12 @@ Partial Class frmMain
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
