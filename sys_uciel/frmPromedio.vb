@@ -40,45 +40,73 @@ Public Class frmPromedio
         Close()
     End Sub
 
-    ':: Botón para agregar y incrementar los difrentes contadores, y que nos da el paso a poder realizar el promedio de edades
+    ':: Botón para agregar y incrementar los diferentes contadores, y que nos da el paso a poder realizar el promedio de edades
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        Select Case Val(Me.txtEdad.Text)
-            Case 0
-                MsgBox("No se puede ingresar una edad 0", MsgBoxStyle.Critical, "Multi App")
 
-            Case > 0
-                If txtDni.Text IsNot "" And txtEdad.Text IsNot "" Then
-                    Me.txtCant.Text = Val(Me.txtCant.Text) + 1
+        If txtDni.Text IsNot "" And txtEdad.Text IsNot "" Then
 
-                    If Val(Me.txtEdad.Text) > 17 Then
-                        ':: Inicializamos el acumulador de edades, solo con las edades mayores
-                        edades_mayores += Val(Me.txtEdad.Text)
+            ':: Validamos que el txtBoxImport, txtBoxCotizacion y txtDni no contengan 0
+            If Not Val(Me.txtDni.Text) = 0 And Not Val(Me.txtEdad.Text) = 0 Then
 
-                        ':: Aumentamos el valor que contiene el txtMayores, para mostrar que estamos agregando edades mayores
-                        Me.txtMayores.Text = Val(Me.txtMayores.Text) + 1
-                    End If
+                ':: Contador de edades
+                Me.txtCant.Text = Val(Me.txtCant.Text) + 1
 
-                    ':: Validamos que el campo DNI no este vacio, y guardamos el valor ingresado y despues bloqueamos su modificación
-                    If txtDni.Text IsNot "" Then
-                        dni = Me.txtDni.Text
-                        Me.txtDni.Enabled = False
-                    End If
+                ':: Guardamos el valor ingresado y despues bloqueamos su modificación
+                dni = Me.txtDni.Text
+                Me.txtDni.Enabled = False
 
-                    MsgBox("Edad guardada con exito", MsgBoxStyle.Information, "Multi App")
-                    Me.txtEdad.Clear()
+                If Val(Me.txtEdad.Text) > 17 Then
+                    ':: Inicializamos el acumulador de edades, solo con las edades mayores
+                    edades_mayores += Val(Me.txtEdad.Text)
 
-                    ':: Pequeña validación para activar o desactivar botones
-                    If Me.txtMayores.Text Is "" Then
-                        Me.btnCalcular.Enabled = False
+                    ':: Aumentamos el valor que contiene el txtMayores, para mostrar que estamos agregando edades mayores
+                    Me.txtMayores.Text = Val(Me.txtMayores.Text) + 1
 
-                    Else
-                        Me.btnCalcular.Enabled = True
-                        Me.btnSave.Enabled = False
-                    End If
-                Else
-                    MsgBox("Por favor ingresar datos en DNI y edad", MsgBoxStyle.Critical, "Multi App")
                 End If
-        End Select
+
+                MsgBox("Edad guardada con exito", MsgBoxStyle.Information, "Multi App")
+                Me.txtEdad.Clear()
+                Me.btnSave.Enabled = True
+
+                ':: Pequeña validación para activar o desactivar botones
+                If Me.txtMayores.Text Is "" Then
+                    Me.btnCalcular.Enabled = False
+
+                Else
+                    Me.btnCalcular.Enabled = True
+                    Me.btnSave.Enabled = False
+
+                End If
+            Else
+                MsgBox("No se permite ingresar 0", MsgBoxStyle.Critical, "Multi App")
+
+            End If
+        Else
+            MsgBox("Por favor ingresar datos en DNI y edad", MsgBoxStyle.Critical, "Multi App")
+
+        End If
+    End Sub
+
+    ':: Botón para guardar datos en un documento sin promedio
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        ':: Manejo de archivos
+        Try
+            Me.txtEdad.Enabled = False
+
+            EditarDocumento.ReadAndWite("El DNI es: " + dni)
+            EditarDocumento.ReadAndWite("La cantidad de edades ingresadas son: " + txtCant.Text)
+            EditarDocumento.ReadAndWite("")
+
+            ':: Mandamos un mensaje con la confimación de que guardamos los datos dentro de Bloc de notas
+            MsgBox("Datos guardados exitosamente", MsgBoxStyle.Information, "Multi App")
+
+            Me.btnAgregar.Enabled = False
+            Me.btnSave.Enabled = False
+
+        Catch ex As Exception
+            MsgBox("Se presentó un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
+        End Try
     End Sub
 
     ':: Con esté botón para hacer tanto el calculo de promedio como el almacenamiento de los datos dentro de un documento de texto
@@ -101,28 +129,11 @@ Public Class frmPromedio
             ':: Mandamos un mensaje con la confimación de que guardamos los datos dentro de Bloc de notas
             MsgBox("Datos guardados exitosamente", MsgBoxStyle.Information, "Multi App")
 
+            Me.btnAgregar.Enabled = False
+            Me.btnCalcular.Enabled = False
 
         Catch ex As Exception
-            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
-        End Try
-    End Sub
-
-    ':: Botón para guardar datos en un documento sin promedio
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
-        ':: Manejo de archivos
-        Try
-            Me.txtEdad.Enabled = False
-
-            EditarDocumento.ReadAndWite("El DNI es: " + dni)
-            EditarDocumento.ReadAndWite("La cantidad de edades ingresadas son: " + txtCant.Text)
-            EditarDocumento.ReadAndWite("")
-
-            ':: Mandamos un mensaje con la confimación de que guardamos los datos dentro de Bloc de notas
-            MsgBox("Datos guardados exitosamente", MsgBoxStyle.Information, "Multi App")
-
-        Catch ex As Exception
-            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
+            MsgBox("Se presentó un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
         End Try
     End Sub
 
@@ -148,7 +159,8 @@ Public Class frmPromedio
         promedio = 0
         edades_mayores = 0
 
-        Me.btnSave.Enabled = True
+        Me.btnAgregar.Enabled = True
+        Me.btnSave.Enabled = False
         Me.btnCalcular.Enabled = False
 
     End Sub

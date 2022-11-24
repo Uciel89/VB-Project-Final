@@ -22,6 +22,7 @@ Partial Class frmPromedio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPromedio))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -258,6 +259,7 @@ Partial Class frmPromedio
         'btnSave
         '
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSave.Enabled = False
         Me.btnSave.Location = New System.Drawing.Point(85, 209)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(189, 23)
@@ -290,9 +292,10 @@ Partial Class frmPromedio
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmPromedio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmPromedio"
+        Me.Text = "Promedio"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

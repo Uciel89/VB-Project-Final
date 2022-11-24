@@ -22,6 +22,7 @@ Partial Class frmConversor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConversor))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnMinimize = New System.Windows.Forms.PictureBox()
@@ -142,17 +143,18 @@ Partial Class frmConversor
         'txtBoxResult
         '
         Me.txtBoxResult.Enabled = False
-        Me.txtBoxResult.Location = New System.Drawing.Point(256, 233)
+        Me.txtBoxResult.Location = New System.Drawing.Point(244, 233)
         Me.txtBoxResult.Name = "txtBoxResult"
-        Me.txtBoxResult.Size = New System.Drawing.Size(80, 20)
+        Me.txtBoxResult.Size = New System.Drawing.Size(92, 20)
         Me.txtBoxResult.TabIndex = 7
+        Me.txtBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(177, 233)
+        Me.Label4.Location = New System.Drawing.Point(169, 233)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 17)
         Me.Label4.TabIndex = 25
@@ -247,9 +249,10 @@ Partial Class frmConversor
         Me.Controls.Add(Me.txtBoxImpor)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmConversor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "1"
+        Me.Text = "Conversor"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.btnMinimize, System.ComponentModel.ISupportInitialize).EndInit()

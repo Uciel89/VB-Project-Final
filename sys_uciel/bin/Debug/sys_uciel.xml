@@ -62,6 +62,11 @@ sys_uciel
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:sys_uciel.My.Resources.Resources.person_icon">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:sys_uciel.My.Resources.Resources.refresh_icon">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

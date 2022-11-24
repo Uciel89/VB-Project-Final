@@ -3,7 +3,7 @@
 Public Class frmLogin
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.txtBoxLogin.Select()
+        Me.txtBoxUser.Select()
     End Sub
 
     ':: Configuración para darle movimiento a la barra de navegación
@@ -32,7 +32,7 @@ Public Class frmLogin
 
     ':: Botón para acceder al programa
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        If Me.txtBoxLogin.Text = "123" Then
+        If Me.txtBoxPassword.Text = "123" And Me.txtBoxUser.Text = "admin" Then
             frmMain.Show()
             Me.Close()
         Else

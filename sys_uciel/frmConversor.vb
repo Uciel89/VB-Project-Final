@@ -37,43 +37,44 @@ Public Class frmConversor
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    ':: Configuración del boton para realizar la conversión 
+    ':: Configuración del botón para realizar la conversión 
     Private Sub BtnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
 
-        ':: Validamos que el txtBoxImport no contenga 0
-        Select Case Val(Me.txtBoxImpor.Text)
-            Case 0
-                MsgBox("No se permite ingresar un importe en 0", MsgBoxStyle.Critical, "Multi App")
+        If Me.txtBoxDni.Text IsNot "" And Me.txtBoxImpor.Text IsNot "" And Me.txtBoxCot.Text IsNot "" Then
 
-            Case > 0
+            ':: Realizamos una validación individual de cada txtBox para validar que no se a igresado un 0
+            If Not Val(Me.txtBoxDni.Text) = 0 And Not Val(Me.txtBoxImpor.Text) = 0 And Not Val(Me.txtBoxCot.Text) = 0 Then
                 resultado = Val(Me.txtBoxImpor.Text) * Val(Me.txtBoxCot.Text)
                 Me.txtBoxResult.Text = resultado
 
                 ':: Manejo de archivos
-                If Me.txtBoxDni.Text IsNot "" And Me.txtBoxCot.Text IsNot "" And Me.txtBoxImpor.Text IsNot "" Then
-                    Me.txtBoxDni.Enabled = False
+                Me.txtBoxDni.Enabled = False
 
-                    ':: Si el valor ingresado por el txtBoxImport es superior o igual 100, guardamos ese importe junto al DNI del usuario que realizo la conversión
-                    If Val(Me.txtBoxImpor.Text) >= 100 And (Not Val(Me.txtBoxImpor.Text) = 0) Then
-                        Try
-                            EditarDocumento.ReadAndWite("El DNI es: " + Me.txtBoxDni.Text)
-                            EditarDocumento.ReadAndWite("Cantidad de dolares comprados son: " + Me.txtBoxImpor.Text)
-                            EditarDocumento.ReadAndWite("")
+                ':: Si el valor ingresado por el txtBoxImport es superior o igual 100, guardamos ese importe junto al DNI del usuario que realizó la conversión
+                If Val(Me.txtBoxImpor.Text) >= 100 Then
+                    Try
+                        EditarDocumento.ReadAndWite("El DNI es: " + Me.txtBoxDni.Text)
+                        EditarDocumento.ReadAndWite("Cantidad de dólares comprados son: " + Me.txtBoxImpor.Text)
+                        EditarDocumento.ReadAndWite("")
 
-                            MsgBox("Registro guardado exitosamente", MsgBoxStyle.Information, "Multi App")
+                        MsgBox("Registro guardado exitosamente", MsgBoxStyle.Information, "Multi App")
 
-                        Catch ex As Exception
-                            MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
+                    Catch ex As Exception
+                        MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
 
-                        End Try
-                    End If
-                Else
-                    MsgBox("Por favor ingresar datos en dni, cotizacion y importe", MsgBoxStyle.Critical, "Multi App")
+                    End Try
                 End If
-        End Select
+            Else
+                MsgBox("No se permite ingresar 0", MsgBoxStyle.Critical, "Multi App")
+
+            End If
+        Else
+            MsgBox("Por favor ingresar datos en dni, importe y cotización", MsgBoxStyle.Critical, "Multi App")
+
+        End If
     End Sub
 
-    ':: Configurando el botón para refrescar todos los campos de texto del la ventana.
+    ':: Configurando el botón para refrescar todos los campos de texto de la ventana
     Private Sub BtnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Me.txtBoxCot.Clear()
         Me.txtBoxImpor.Clear()

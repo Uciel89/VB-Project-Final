@@ -22,20 +22,25 @@ Partial Class frmLogin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnClose = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtBoxLogin = New System.Windows.Forms.TextBox()
+        Me.txtBoxPassword = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtBoxUser = New System.Windows.Forms.TextBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,20 +108,20 @@ Partial Class frmLogin
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Multi App"
         '
-        'txtBoxLogin
+        'txtBoxPassword
         '
-        Me.txtBoxLogin.Location = New System.Drawing.Point(89, 312)
-        Me.txtBoxLogin.Name = "txtBoxLogin"
-        Me.txtBoxLogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtBoxLogin.Size = New System.Drawing.Size(232, 20)
-        Me.txtBoxLogin.TabIndex = 5
+        Me.txtBoxPassword.Location = New System.Drawing.Point(89, 335)
+        Me.txtBoxPassword.Name = "txtBoxPassword"
+        Me.txtBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtBoxPassword.Size = New System.Drawing.Size(232, 20)
+        Me.txtBoxPassword.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(86, 292)
+        Me.Label2.Location = New System.Drawing.Point(86, 315)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(80, 17)
         Me.Label2.TabIndex = 6
@@ -132,10 +137,38 @@ Partial Class frmLogin
         Me.btnLogin.Text = "Acceder"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(86, 272)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 17)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Usuario"
+        '
+        'txtBoxUser
+        '
+        Me.txtBoxUser.Location = New System.Drawing.Point(89, 292)
+        Me.txtBoxUser.Name = "txtBoxUser"
+        Me.txtBoxUser.Size = New System.Drawing.Size(232, 20)
+        Me.txtBoxUser.TabIndex = 9
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.sys_uciel.My.Resources.Resources.person_icon
+        Me.PictureBox4.Location = New System.Drawing.Point(55, 286)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(25, 26)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 11
+        Me.PictureBox4.TabStop = False
+        '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.sys_uciel.My.Resources.Resources.password_icon
-        Me.PictureBox3.Location = New System.Drawing.Point(55, 306)
+        Me.PictureBox3.Location = New System.Drawing.Point(55, 329)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(25, 26)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -158,22 +191,27 @@ Partial Class frmLogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(413, 594)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.txtBoxUser)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtBoxLogin)
+        Me.Controls.Add(Me.txtBoxPassword)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmLogin"
+        Me.Text = "Login"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -187,9 +225,12 @@ Partial Class frmLogin
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtBoxLogin As TextBox
+    Friend WithEvents txtBoxPassword As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtBoxUser As TextBox
 End Class
