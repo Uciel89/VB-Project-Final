@@ -165,7 +165,7 @@ Partial Class frmPromedio
         Me.btnCalcular.Location = New System.Drawing.Point(85, 238)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(189, 23)
-        Me.btnCalcular.TabIndex = 19
+        Me.btnCalcular.TabIndex = 4
         Me.btnCalcular.Text = "Calcular"
         Me.btnCalcular.UseVisualStyleBackColor = True
         '
@@ -175,7 +175,7 @@ Partial Class frmPromedio
         Me.btnAgregar.Location = New System.Drawing.Point(85, 180)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(189, 23)
-        Me.btnAgregar.TabIndex = 18
+        Me.btnAgregar.TabIndex = 2
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
@@ -184,7 +184,7 @@ Partial Class frmPromedio
         Me.txtDni.Location = New System.Drawing.Point(180, 107)
         Me.txtDni.Name = "txtDni"
         Me.txtDni.Size = New System.Drawing.Size(94, 20)
-        Me.txtDni.TabIndex = 17
+        Me.txtDni.TabIndex = 0
         Me.txtDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtEdad
@@ -192,7 +192,7 @@ Partial Class frmPromedio
         Me.txtEdad.Location = New System.Drawing.Point(180, 143)
         Me.txtEdad.Name = "txtEdad"
         Me.txtEdad.Size = New System.Drawing.Size(94, 20)
-        Me.txtEdad.TabIndex = 16
+        Me.txtEdad.TabIndex = 1
         Me.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label2
@@ -253,7 +253,7 @@ Partial Class frmPromedio
         Me.btnRefresh.Location = New System.Drawing.Point(541, 218)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(43, 43)
-        Me.btnRefresh.TabIndex = 31
+        Me.btnRefresh.TabIndex = 5
         Me.btnRefresh.UseVisualStyleBackColor = False
         '
         'btnSave
@@ -263,7 +263,7 @@ Partial Class frmPromedio
         Me.btnSave.Location = New System.Drawing.Point(85, 209)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(189, 23)
-        Me.btnSave.TabIndex = 32
+        Me.btnSave.TabIndex = 3
         Me.btnSave.Text = "Guardar"
         Me.btnSave.UseVisualStyleBackColor = True
         '

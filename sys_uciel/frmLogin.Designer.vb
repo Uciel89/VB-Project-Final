@@ -114,7 +114,7 @@ Partial Class frmLogin
         Me.txtBoxPassword.Name = "txtBoxPassword"
         Me.txtBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtBoxPassword.Size = New System.Drawing.Size(232, 20)
-        Me.txtBoxPassword.TabIndex = 5
+        Me.txtBoxPassword.TabIndex = 1
         '
         'Label2
         '
@@ -133,7 +133,7 @@ Partial Class frmLogin
         Me.btnLogin.Location = New System.Drawing.Point(89, 378)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(232, 44)
-        Me.btnLogin.TabIndex = 7
+        Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "Acceder"
         Me.btnLogin.UseVisualStyleBackColor = True
         '
@@ -153,7 +153,7 @@ Partial Class frmLogin
         Me.txtBoxUser.Location = New System.Drawing.Point(89, 292)
         Me.txtBoxUser.Name = "txtBoxUser"
         Me.txtBoxUser.Size = New System.Drawing.Size(232, 20)
-        Me.txtBoxUser.TabIndex = 9
+        Me.txtBoxUser.TabIndex = 0
         '
         'PictureBox4
         '

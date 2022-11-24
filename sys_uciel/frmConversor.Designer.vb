@@ -98,7 +98,7 @@ Partial Class frmConversor
         Me.txtBoxImpor.Location = New System.Drawing.Point(244, 113)
         Me.txtBoxImpor.Name = "txtBoxImpor"
         Me.txtBoxImpor.Size = New System.Drawing.Size(92, 20)
-        Me.txtBoxImpor.TabIndex = 0
+        Me.txtBoxImpor.TabIndex = 1
         Me.txtBoxImpor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label2
@@ -117,7 +117,7 @@ Partial Class frmConversor
         Me.btnCalcular.Location = New System.Drawing.Point(117, 198)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(219, 29)
-        Me.btnCalcular.TabIndex = 2
+        Me.btnCalcular.TabIndex = 3
         Me.btnCalcular.Text = "Calcular"
         Me.btnCalcular.UseVisualStyleBackColor = True
         '
@@ -126,7 +126,7 @@ Partial Class frmConversor
         Me.txtBoxCot.Location = New System.Drawing.Point(244, 144)
         Me.txtBoxCot.Name = "txtBoxCot"
         Me.txtBoxCot.Size = New System.Drawing.Size(92, 20)
-        Me.txtBoxCot.TabIndex = 1
+        Me.txtBoxCot.TabIndex = 2
         Me.txtBoxCot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
@@ -165,7 +165,7 @@ Partial Class frmConversor
         Me.txtBoxDni.Location = New System.Drawing.Point(244, 81)
         Me.txtBoxDni.Name = "txtBoxDni"
         Me.txtBoxDni.Size = New System.Drawing.Size(92, 20)
-        Me.txtBoxDni.TabIndex = 26
+        Me.txtBoxDni.TabIndex = 0
         Me.txtBoxDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label5
@@ -214,7 +214,7 @@ Partial Class frmConversor
         Me.btnRefresh.Location = New System.Drawing.Point(207, 278)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(43, 43)
-        Me.btnRefresh.TabIndex = 3
+        Me.btnRefresh.TabIndex = 4
         Me.btnRefresh.UseVisualStyleBackColor = False
         '
         'PictureBox2
