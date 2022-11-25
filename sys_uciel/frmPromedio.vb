@@ -44,15 +44,13 @@ Public Class frmPromedio
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
         If txtDni.Text IsNot "" And txtEdad.Text IsNot "" Then
-
             ':: Validamos que el txtBoxImport, txtBoxCotizacion y txtDni no contengan 0
             If Not Val(Me.txtDni.Text) = 0 And Not Val(Me.txtEdad.Text) = 0 Then
-
                 ':: Contador de edades
                 Me.txtCant.Text = Val(Me.txtCant.Text) + 1
 
                 ':: Guardamos el valor ingresado y despues bloqueamos su modificación
-                dni = Me.txtDni.Text
+                Me.dni = Me.txtDni.Text
                 Me.txtDni.Enabled = False
 
                 If Val(Me.txtEdad.Text) > 17 Then
@@ -61,7 +59,6 @@ Public Class frmPromedio
 
                     ':: Aumentamos el valor que contiene el txtMayores, para mostrar que estamos agregando edades mayores
                     Me.txtMayores.Text = Val(Me.txtMayores.Text) + 1
-
                 End If
 
                 MsgBox("Edad guardada con exito", MsgBoxStyle.Information, "Multi App")
@@ -71,19 +68,15 @@ Public Class frmPromedio
                 ':: Pequeña validación para activar o desactivar botones
                 If Me.txtMayores.Text Is "" Then
                     Me.btnCalcular.Enabled = False
-
                 Else
                     Me.btnCalcular.Enabled = True
                     Me.btnSave.Enabled = False
-
                 End If
             Else
                 MsgBox("No se permite ingresar 0", MsgBoxStyle.Critical, "Multi App")
-
             End If
         Else
             MsgBox("Por favor ingresar datos en DNI y edad", MsgBoxStyle.Critical, "Multi App")
-
         End If
     End Sub
 
@@ -92,6 +85,7 @@ Public Class frmPromedio
 
         ':: Manejo de archivos
         Try
+
             Me.txtEdad.Enabled = False
 
             EditarDocumento.ReadAndWite("El DNI es: " + dni)
@@ -114,13 +108,14 @@ Public Class frmPromedio
 
         If Me.txtMayores IsNot "" Then
             promedio = edades_mayores / Val(Me.txtMayores.Text)
-            Me.txtPromedio.Text = Round(promedio, 2).ToString
 
+            Me.txtPromedio.Text = Round(promedio, 2).ToString
             Me.txtEdad.Enabled = False
         End If
 
         ':: Manejo de archivos
         Try
+
             EditarDocumento.ReadAndWite("El DNI es: " + dni)
             EditarDocumento.ReadAndWite("La cantidad de edades ingresadas son: " + txtCant.Text)
             EditarDocumento.ReadAndWite("El promedio de las edades generado por este DNI: " + dni + " son: " + promedio.ToString)

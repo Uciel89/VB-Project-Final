@@ -34,8 +34,4 @@ Public Class frmMain
     Private Sub ConversorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConversorToolStripMenuItem.Click
         frmConversor.ShowDialog()
     End Sub
-
-    Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

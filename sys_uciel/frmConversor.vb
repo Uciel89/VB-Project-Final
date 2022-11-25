@@ -53,6 +53,7 @@ Public Class frmConversor
                 ':: Si el valor ingresado por el txtBoxImport es superior o igual 100, guardamos ese importe junto al DNI del usuario que realizó la conversión
                 If Val(Me.txtBoxImpor.Text) >= 100 Then
                     Try
+
                         EditarDocumento.ReadAndWite("El DNI es: " + Me.txtBoxDni.Text)
                         EditarDocumento.ReadAndWite("Cantidad de dólares comprados son: " + Me.txtBoxImpor.Text)
                         EditarDocumento.ReadAndWite("")
@@ -61,16 +62,13 @@ Public Class frmConversor
 
                     Catch ex As Exception
                         MsgBox("Se presento un problema al escribir en el archivo: " & ex.Message, MsgBoxStyle.Critical, "Multi App")
-
                     End Try
                 End If
             Else
                 MsgBox("No se permite ingresar 0", MsgBoxStyle.Critical, "Multi App")
-
             End If
         Else
             MsgBox("Por favor ingresar datos en dni, importe y cotización", MsgBoxStyle.Critical, "Multi App")
-
         End If
     End Sub
 
