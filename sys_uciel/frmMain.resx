@@ -122,10 +122,10 @@
   </metadata>
   <data name="Label3.Text" xml:space="preserve">
     <value>La funcionalidad de promedio, nos permite obtener un
-promedio de edades ingresadas,y además guardar las 
-en un documento, la cantidad de edades que ingresaste, 
-más un DNI para tener un orden y el promedio que 
-obtuviste de ese cálculo.</value>
+promedio de edades ingresadas,y además guardarlas 
+en un documento, la cantidad de edades que ingresamos, 
+un DNI para tener un orden y el promedio que 
+de las edades mayores a 17.</value>
   </data>
   <data name="Label4.Text" xml:space="preserve">
     <value>Por otro lado tenemos la funcionalidad de conversión,

@@ -137,7 +137,7 @@ Partial Class frmMain
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(106, 326)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(279, 65)
+        Me.Label3.Size = New System.Drawing.Size(284, 65)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = resources.GetString("Label3.Text")
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
